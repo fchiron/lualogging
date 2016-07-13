@@ -111,7 +111,7 @@ function logging.new(append)
 		local order = LEVEL[level]
 		assert(order, "undefined level `%s'", _tostring(level))
 		silent = silent or false
-		if self.level and !silent then
+		if self.level and not silent then
 			self:log(logging.WARN, "Logger: changing loglevel from %s to %s", self.level, level)
 		end
 		self.level = level
